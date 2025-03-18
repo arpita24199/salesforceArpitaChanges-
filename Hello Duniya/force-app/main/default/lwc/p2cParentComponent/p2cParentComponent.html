@@ -1,0 +1,60 @@
+<template>
+    <!-- <c-p2c-alert-component
+        message = "Hurray!I got the data 1"
+        card-heading="Parent to Child Primitive data communication"
+        number=20
+        is-valid=false>
+    </c-p2c-alert-component>
+    <div class="slds-var-m-bottom_medium"> </div>
+    <c-p2c-carousel-component carousel-details={carouselData}> </c-p2c-carousel-component>
+
+    <div class="slds-var-m-bottom_medium"> </div>
+    <lightning-card>
+        <lightning-input title="Parent to Child Communication on action" 
+                    type="number" 
+                    label="Enterpercentage"
+                    onkeyup={changeHandler}
+                    value={percentage}>
+        </lightning-input>
+                    
+                    </lightning-card>
+    <c-p2c-progress-componenet
+            progress-value={percentage} >
+    </c-p2c-progress-componenet> -->
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-3">
+    <span> <c-p2c-alert-component
+            message = "Hurray!I got the data 1"
+            card-heading="Parent to Child Primitive data communication"
+            number=20
+            is-valid=false>
+           </c-p2c-alert-component>
+    </span>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+          <span>
+            <lightning-card>
+                <lightning-input title="Parent to Child Communication on action" 
+                            type="number" 
+                            label="Enterpercentage"
+                            onkeyup={changeHandler}
+                            value={percentage}>
+                </lightning-input>
+                            
+            </lightning-card>
+            <c-p2c-progress-componenet
+            progress-value={percentage} >
+            </c-p2c-progress-componenet>
+           
+          </span>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <span>
+                <c-p2c-carousel-component carousel-details={carouselData}> </c-p2c-carousel-component>
+            </span>
+          </div>
+      </div>
+    
+    
+</template>

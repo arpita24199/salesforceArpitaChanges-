@@ -1,0 +1,105 @@
+<template>
+    <lightning-card title="For each loop">
+        <div class="slds-var-m-around_medium">
+        <template for:each={carList} for:item="Car">
+         <ul class="slds-list_dotted" key={Car}>
+            <li>{Car}</li>
+            <li>Khan</li>
+            <li>My Name is Khan</li>
+          </ul>
+        </template>
+        </div>
+    </lightning-card>
+
+
+
+    <lightning-card title="Iterate loop">
+        <div class="slds-var-m-around_medium">
+        <template iterator:ceo={ceoList}>
+        <div key={ceo.value.id}>
+         <ul class="slds-list_dotted">
+            <template if:true={ceo.last}>
+                <li><strong> Thankyou for your time</strong></li>
+            </template>
+            <li><strong>{ceo.value.company} </strong>
+                {ceo.value.name}
+            </li>
+            <template if:true={ceo.last}>
+                <div><strong> Thankyou for your time</strong></div>
+            </template>
+          </ul>
+             </div>
+        </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Iterate loop1 key is not in div">
+        <div class="slds-var-m-around_medium">
+        <template iterator:ceo={ceoList}>
+         <ul class="slds-list_dotted" key={ceo.value.id}>
+        <template if:true={ceo.first}>
+            <div><strong> List of Top companies and their CEO's</strong></div>
+        </template>
+            <li><strong>{ceo.value.company}</strong>
+                {ceo.value.name}
+            </li>
+            <template if:true={ceo.last}>
+                <div><strong> Thankyou for your time</strong></div>
+            </template>
+            
+          </ul>
+        </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="For each loop in array of object">
+        <div class="slds-var-m-around_medium">
+        <template for:each={ceoList} for:item="list">
+         <ul class="slds-list_dotted" key={list.id}>
+            <li>{list.company} {list.name}</li>
+            
+          </ul>
+        </template>
+        </div>
+    </lightning-card>
+</template>
+
+
+
+<!-- 
+In previous video i have used <ul> inside the loop. Ideally we should not use the ul inside the loop. Below is the better code
+
+    First Loop
+    
+    <lightning-card title="for:each loop">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_around-space">
+                <template for:each={carList} for:item="car">
+                    <li key={car} class="slds-item">{car}</li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+    Second Loop
+    
+    <lightning-card title="for:each loop with array of objects">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_around-space">
+                <template for:each={ceoList} for:item="list">
+                    <li key={list.id} class="slds-item">{list.name} {list.company}</li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+    Third Loop
+    
+    <lightning-card title="iterator loop">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_around-space">
+                <template iterator:ceo={ceoList}>
+                    <li key={ceo.value.id}>
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of top companies and their CEOs</strong>
+                            </div>
+                        </template> -->
