@@ -3,5 +3,6 @@ public class BatchApexScenerio1 {
         System.debug('Hello Arpita Singh');
         String a = 'Anamika';
         String b= 'kalyani';
+        String c ='Tiara';
     }
 }
